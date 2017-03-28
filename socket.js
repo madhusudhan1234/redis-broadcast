@@ -13,5 +13,4 @@ redis.on('message', function(channel, message) {
 
    io.emit(channel + ':' + message.event, message.data);
 });
-
 server.listen(3000);

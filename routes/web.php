@@ -1,5 +1,6 @@
 <?php
-use Illuminate\Support\Facades\Redis;
+
+use App\Events\UserSingedUp;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,15 +13,14 @@ use Illuminate\Support\Facades\Redis;
 */
 
 Route::get('/', function () {
-    $data = [
+    /*$data = [
         'event' => 'UserSingedUp',
         'data' => [
             'username' => 'JohnDoe'
         ]
-    ];
-    Redis::publish('test-channel', json_encode($data));
+    ];*/
 
-    // event(new UserSingedUp());
+    event(new UserSingedUp('Madhu Sudhan Subedi'));
 
     return view('welcome');
 });

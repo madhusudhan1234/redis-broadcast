@@ -28,7 +28,7 @@
                     users: [],
                 },
                 mounted: function() {
-                    socket.on('test-channel:UserSingedUp', function(data) {
+                    socket.on('test-channel:App\\Events\\UserSingedUp', function(data) {
                         this.users.push(data.username);
                     }.bind(this));
                 }
